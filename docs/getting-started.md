@@ -1,50 +1,53 @@
-<!-- order: 5 -->
+# Getting Started with Quantum Workspace
 
-# Getting Started with VSCodium
+## What is Quantum Workspace?
 
-This guide will help you get started with VSCodium.
+Quantum Workspace is an **AI-powered IDE** that makes software development accessible to everyone - from non-technical users to experienced developers.
 
-## Table of Contents
+## Quick Start
 
-- [Installation](#installation)
-- [First Steps](#first-steps)
-- [Basic Usage](#basic-usage)
-- [Keyboard Shortcuts](#keyboard-shortcuts)
-- [Next Steps](#next-steps)
+### For Non-Technical Users (Simple Mode)
 
-## <a id="installation"></a>Installation
+1. Open VS Code with Quantum Workspace
+2. Press `Ctrl+Shift+P`
+3. Type `Quantum Workspace: Simple Mode`
+4. Click on a template (Website, Blog, Store, etc.)
+5. Describe what you want to build
+6. Quantum builds it for you!
 
-VSCodium can be installed on Windows, macOS, and Linux. Visit the [download page](https://vscodium.com/#install) for installation instructions.
+### For Developers (Developer Mode)
 
-## <a id="first-steps"></a>First Steps
+1. Open VS Code with Quantum Workspace
+2. Press `Ctrl+Shift+P`
+3. Type `Quantum Workspace: Developer Mode`
+4. Use AI agents: Architect, Developer, or Designer
+5. Build with One-Click Build
+6. Deploy with One-Click Deploy
 
-After installing VSCodium, here are some first steps to get started:
+## First Steps
 
-1. **Open a folder**: Use File > Open Folder to open your project
-2. **Install extensions**: Click on the Extensions icon in the sidebar to browse and install extensions
-3. **Configure settings**: Use File > Preferences > Settings to customize your editor
+### 1. Configure LLM Provider
 
-## <a id="basic-usage"></a>Basic Usage
+Quantum Workspace works with:
+- **OpenRouter** (cloud - 100+ models)
+- **Ollama** (local - free, offline)
 
-VSCodium works just like Visual Studio Code, with a few differences:
+### 2. Choose Your Mode
 
-- It uses Open VSX for extensions by default instead of the Visual Studio Marketplace
-- It doesn't include Microsoft telemetry or branding
-- Some proprietary features may not be available
+- **Simple Mode** - For non-technical users
+- **Developer Mode** - Full power for developers
 
-## <a id="keyboard-shortcuts"></a>Keyboard Shortcuts
+### 3. Create a Project
 
-Here are some essential keyboard shortcuts to get you started:
+Use templates or describe what you want to build.
 
-- `Ctrl+P` (Windows/Linux) or `Cmd+P` (macOS): Quick Open, Go to File
-- `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS): Show Command Palette
-- `Ctrl+,` (Windows/Linux) or `Cmd+,` (macOS): User Settings
-- `Ctrl+K Ctrl+S` (Windows/Linux) or `Cmd+K Cmd+S` (macOS): Keyboard Shortcuts
+## Tips
 
-## <a id="next-steps"></a>Next Steps
+- Start with Simple Mode if you're new
+- Use AI Terminal for command suggestions
+- Check Visual Git for version control
+- Deploy directly to Vercel/Cloudflare
 
-Once you're comfortable with the basics, you might want to:
+---
 
-- Explore the [documentation](https://github.com/VSCodium/vscodium/blob/master/docs/index.md) for more details
-- Join the [community](https://github.com/VSCodium/vscodium/discussions) to ask questions and share tips
-- Contribute to the [project](https://github.com/VSCodium/vscodium/blob/master/CONTRIBUTING.md) if you're interested
+Need help? Run `quantumWorkspace.start` or check the docs.
