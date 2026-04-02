@@ -11,19 +11,21 @@
   "categories": [
     "Programming Languages",
     "AI",
-    "Debuggers"
+    "IDE",
+    "Productivity"
   ],
   "keywords": [
+    "quantum",
     "ai",
+    "ide",
+    "workspace",
     "llm",
     "openrouter",
     "anthropic",
     "claude",
-    "codegen",
     "developer",
-    "architect",
-    "designer",
-    "agent"
+    "agent",
+    "productivity"
   ],
   "activationEvents": [
     "onLanguage:javascript",
@@ -35,6 +37,18 @@
   ],
   "main": "./src/extension",
   "contributes": {
+    "themes": [
+      {
+        "label": "Quantum Dark",
+        "path": "./themes/quantum-dark.json",
+        "uiTheme": "vs-dark"
+      },
+      {
+        "label": "Quantum Light",
+        "path": "./themes/quantum-light.json",
+        "uiTheme": "vs"
+      }
+    ],
     "commands": [
       {
         "command": "quantumWorkspace.start",
@@ -193,9 +207,14 @@
       }
     ],
     "configuration": {
-      "title": "AI Dev Suite",
+      "title": "Quantum Workspace",
       "properties": {
-        "aiDevSuite.providers.openrouter.apiKey": {
+        "quantumWorkspace.theme": {
+          "type": "string",
+          "default": "quantum-dark",
+          "enum": ["quantum-dark", "quantum-light"],
+          "description": "Quantum Workspace theme"
+        },
           "type": "string",
           "default": "",
           "description": "OpenRouter API Key"

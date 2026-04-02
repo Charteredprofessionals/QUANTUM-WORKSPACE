@@ -11,6 +11,17 @@
 
 ---
 
+## 🎨 Themes
+
+Quantum Workspace comes with **2 custom themes**:
+
+- **Quantum Dark** - Dark theme with GitHub-inspired colors
+- **Quantum Light** - Light theme for daytime use
+
+Select from VS Code's theme selector (`Ctrl+Shif+P` → "Theme" → "Quantum Dark/Light")
+
+---
+
 ## 🌟 Features
 
 - 🧠 **AI-Powered** - Quantum Brain with context, memory, and automation

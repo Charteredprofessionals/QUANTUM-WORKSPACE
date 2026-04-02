@@ -255,10 +255,10 @@ export class VisualGit {
     body { 
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       padding: 16px;
-      background: #1e1e1e;
-      color: #ccc;
+      background: #0d1117; /* Quantum Dark */
+      color: #c9d1d9;
     }
-    h2 { color: #fff; font-size: 16px; margin-bottom: 12px; }
+    h2 { color: #58a6ff; font-size: 16px; margin-bottom: 12px; } /* Quantum Blue */
     .section { margin-bottom: 20px; }
     .file-list { 
       display: flex; 
@@ -270,15 +270,15 @@ export class VisualGit {
       align-items: center; 
       gap: 8px;
       padding: 6px 8px;
-      background: #2d2d2d;
+      background: #161b22;
       border-radius: 4px;
       cursor: pointer;
     }
-    .file:hover { background: #3d3d3d; }
+    .file:hover { background: #21262d; }
     .status-icon { font-size: 14px; }
-    .file-name { flex: 1; font-size: 13px; }
+    .file-name { flex: 1; font-size: 13px; color: #c9d1d9; }
     .btn {
-      background: #0e639c;
+      background: #238636;
       color: #fff;
       border: none;
       padding: 8px 16px;
@@ -287,13 +287,13 @@ export class VisualGit {
       font-size: 12px;
       margin: 4px;
     }
-    .btn:hover { background: #1177bb; }
-    .btn-secondary { background: #3d3d3d; }
-    .btn-secondary:hover { background: #4d4d4d; }
+    .btn:hover { background: #2ea043; }
+    .btn-secondary { background: #21262d; color: #c9d1d9; }
+    .btn-secondary:hover { background: #30363d; }
     .input {
-      background: #2d2d2d;
-      border: 1px solid #3d3d3d;
-      color: #fff;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
       padding: 8px;
       border-radius: 4px;
       width: 100%;
@@ -301,20 +301,21 @@ export class VisualGit {
     }
     .branch { 
       padding: 4px 8px; 
-      background: #2d2d2d; 
+      background: #161b22; 
       border-radius: 4px;
       margin: 2px;
       display: inline-block;
+      color: #c9d1d9;
     }
-    .branch.current { background: #0e639c; }
+    .branch.current { background: #238636; color: #fff; }
     .commit {
       padding: 8px;
-      background: #2d2d2d;
+      background: #161b22;
       border-radius: 4px;
       margin-bottom: 4px;
     }
-    .commit-hash { color: #6cb6ff; font-size: 11px; }
-    .commit-msg { font-size: 12px; }
+    .commit-hash { color: #58a6ff; font-size: 11px; }
+    .commit-msg { font-size: 12px; color: #c9d1d9; }
     .toolbar {
       display: flex;
       gap: 8px;

@@ -164,13 +164,13 @@ Use modern best practices.`,
     body { 
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       padding: 20px;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-      color: white;
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 100%); /* Quantum Dark */
+      color: #c9d1d9;
       min-height: 100vh;
     }
     .header { text-align: center; margin-bottom: 30px; }
-    .header h1 { font-size: 28px; margin-bottom: 8px; }
-    .header p { color: #8892b0; }
+    .header h1 { font-size: 28px; margin-bottom: 8px; color: #58a6ff; } /* Quantum Blue */
+    .header p { color: #8b949e; }
     .mode-switch {
       display: flex;
       justify-content: center;
@@ -185,27 +185,28 @@ Use modern best practices.`,
       font-size: 14px;
       transition: all 0.3s;
     }
-    .mode-btn.active { background: #4ade80; color: #1a1a2e; }
-    .mode-btn.inactive { background: #2d3748; color: #8892b0; }
+    .mode-btn.active { background: #238636; color: #ffffff; } /* Quantum Green */
+    .mode-btn.inactive { background: #21262d; color: #8b949e; }
     .question {
-      background: rgba(255,255,255,0.1);
+      background: rgba(33, 38, 45, 0.8);
       padding: 20px;
       border-radius: 12px;
       margin-bottom: 20px;
+      border: 1px solid #30363d;
     }
-    .question h2 { font-size: 18px; margin-bottom: 16px; }
+    .question h2 { font-size: 18px; margin-bottom: 16px; color: #c9d1d9; }
     .question input {
       width: 100%;
       padding: 12px 16px;
       border-radius: 8px;
-      border: 1px solid #4a5568;
-      background: #2d3748;
-      color: white;
+      border: 1px solid #30363d;
+      background: #0d1117;
+      color: #c9d1d9;
       font-size: 16px;
     }
     .question input:focus {
       outline: none;
-      border-color: #4ade80;
+      border-color: #58a6ff;
     }
     .goals {
       display: grid;
@@ -213,7 +214,7 @@ Use modern best practices.`,
       gap: 15px;
     }
     .goal-card {
-      background: rgba(255,255,255,0.05);
+      background: rgba(33, 38, 45, 0.8);
       border: 2px solid transparent;
       border-radius: 12px;
       padding: 20px;
@@ -222,15 +223,15 @@ Use modern best practices.`,
       transition: all 0.3s;
     }
     .goal-card:hover {
-      border-color: #4ade80;
+      border-color: #58a6ff;
       transform: translateY(-2px);
     }
     .goal-icon { font-size: 40px; margin-bottom: 10px; }
-    .goal-name { font-size: 16px; font-weight: 600; }
-    .goal-desc { font-size: 12px; color: #8892b0; margin-top: 5px; }
+    .goal-name { font-size: 16px; font-weight: 600; color: #c9d1d9; }
+    .goal-desc { font-size: 12px; color: #8b949e; margin-top: 5px; }
     .action-btn {
-      background: #4ade80;
-      color: #1a1a2e;
+      background: #238636;
+      color: #ffffff;
       border: none;
       padding: 12px 30px;
       border-radius: 8px;
@@ -239,7 +240,7 @@ Use modern best practices.`,
       cursor: pointer;
       margin-top: 20px;
     }
-    .action-btn:hover { background: #22c55e; }
+    .action-btn:hover { background: #2ea043; }
   </style>
 </head>
 <body>
