@@ -1,24 +1,21 @@
 #!/bin/bash
-# Push to GitHub script for AI Dev Suite
+# Quantum Workspace - Push to GitHub
 
-set -e
+echo "🔄 Pushing Quantum Workspace to GitHub..."
 
-cd "$(dirname "$0")"
+# First, authenticate with GitHub (run this once):
+# gh auth login
 
-echo "📦 Adding files..."
-git add -A
+# Or set up a new repo:
+# gh repo create QuantumTechnologies/quantum-workspace --public
 
-echo "💬 Committing..."
-git commit -m "Initial commit: AI Dev Suite - Enterprise SDLC Operating System
+# Push to GitHub
+cd /root/.openclaw/workspace/quantum-workspace
 
-Features:
-- Complete SDLC workflow (Viability → Charter → Dev → Hardening → Launch → Operations)
-- Multi-agent system (Architect, Developer, Designer)
-- Multi-provider LLM support (OpenRouter, Ollama, Agent Router)
-- Project-specific skills and workflows
-- Kickoff automation"
+# Update remote if needed
+git remote set-url origin https://github.com/QuantumTechnologies/quantum-workspace.git
 
-echo "🚀 Creating GitHub repository..."
-gh repo create ai-dev-suite --public --source=. --push
+# Push
+git push -u origin master
 
-echo "✅ Done! Your project is now on GitHub."
+echo "✅ Done! Check: https://github.com/QuantumTechnologies/quantum-workspace"

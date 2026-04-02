@@ -1,42 +1,90 @@
-# Contributing
+# Contributing to Quantum Workspace
 
-:+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
+## Original Development
 
-#### Table Of Contents
+**Quantum Workspace** was developed by **Charteredprofessionals** (Quantum Technologies) as a proprietary IDE with integrated AI capabilities.
 
-- [Code of Conduct](#code-of-conduct)
-- [Reporting Bugs](#reporting-bugs)
-- [Making Changes](#making-changes)
+### Original Contributions
 
-## Code of Conduct
+The following features were designed, developed, and integrated by the Quantum Technologies team:
 
-This project and everyone participating in it is governed by the [VSCodium Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+#### 1. AI Dev Suite Integration
+- **Chief Architect Agent** - System design and viability analysis
+- **Lead Developer Agent** - Code generation, review, and debugging
+- **UI/UX Designer Agent** - Interface and design system creation
+- **Location:** `src/agents/`
 
-## Reporting Bugs
+#### 2. Quantum Brain Engine
+- **Context Indexer** - Full codebase indexing and semantic search
+- **Smart Memory** - Session and project memory across sessions
+- **Response Cache** - LLM response caching for speed
+- **Auto-Workflow** - Context-aware action suggestions
+- **Location:** `src/quantum-brain.ts`, `src/context-indexer.ts`, `src/smart-memory.ts`, etc.
 
-### Before Submitting an Issue
+#### 3. Simple Mode (Non-Technical UI)
+- Goal-based project creation
+- Visual wizard with plain English
+- Pre-built templates selector
+- **Location:** `src/simple-mode.ts`
 
-Before creating bug reports, please check existing issues and [the Troubleshooting page](https://github.com/VSCodium/vscodium/blob/master/docs/troubleshooting.md) as you might find out that you don't need to create one.
-When you are creating a bug report, please include as many details as possible. Fill out [the required template](https://github.com/VSCodium/vscodium/issues/new?&labels=bug&&template=bug_report.md), the information it asks for helps us resolve issues faster.
+#### 4. One-Click Build System
+- Auto-detection of project types (Node.js, Python, Go, Rust)
+- Smart build pipeline
+- **Location:** `src/one-click-build.ts`
 
-## Making Changes
+#### 5. One-Click Deploy
+- Vercel integration
+- Cloudflare Pages integration
+- Netlify integration
+- **Location:** `src/one-click-deploy.ts`
 
-If you want to make changes, please read [the Build page](./docs/howto-build.md).
+#### 6. Visual Git UI
+- Staged/unstaged file view
+- Branch management
+- Commit history
+- Pull/Push operations
+- **Location:** `src/visual-git.ts`
 
-### Building VSCodium
+#### 7. AI Terminal
+- Smart command suggestions
+- Natural language to command conversion
+- Project-aware recommendations
+- **Location:** `src/ai-terminal.ts`
 
-To build VSCodium, please follow the command found in the section [`Build Scripts`](./docs/howto-build.md#build-scripts).
+#### 8. Project Templates
+- 12 pre-built project templates
+- React, Next.js, Vue, Astro, Express, FastAPI, Go, T3 Stack, React Native, Flutter, CLI, Library
+- **Location:** `src/project-templates.ts`
 
-### Updating patches
+#### 9. Plugin System
+- Custom plugin framework
+- Plugin manifest support
+- Plugin manager UI
+- **Location:** `src/plugin-system.ts`
 
-If you want to update the existing patches, please follow the section [`Patch Update Process - Semi-Automated`](./docs/howto-build.md#patch-update-process-semiauto).
+#### 10. CLI Tool
+- Full command-line interface
+- Git integration
+- MCP server support
+- **Location:** `cli/`
 
-### Add a new patch
+#### 11. Skills System
+- Business viability analysis
+- Requirements analysis
+- System design
+- Post-launch operations
+- **Location:** `skills/`
 
-- first, you need to build VSCodium
-- then use the command `./dev/patch.sh <your patch name>`, to initiate a new patch
-- when the script pauses at `Press any key when the conflict have been resolved...`, open `vscode` directory in **VSCodium**
-- run `npm run watch`
-- run `./script/code.sh`
-- make your changes
-- press any key to continue the script `patch.sh`
+---
+
+## License
+
+**PROPRIETARY** - All rights reserved.
+Copyright © 2026 Quantum Technologies.
+
+---
+
+## Contact
+
+- GitHub: [Charteredprofessionals/QUANTUM-WORKSPACE](https://github.com/Charteredprofessionals/QUANTUM-WORKSPACE)
+- Email: licensing@quantumtechnologies.dev

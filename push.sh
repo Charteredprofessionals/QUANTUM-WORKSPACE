@@ -1,18 +1,27 @@
 #!/bin/bash
-# Run this script to push to GitHub
-# Usage: ./push.sh
+# Push Quantum Workspace to GitHub
 
-set -e
+REPO="Charteredprofessionals/QUANTUM-WORKSPACE"
 
-# Configure git (replace with your details)
-git config user.email "your-email@example.com"
-git config user.email "Your Name"
+echo "🚀 Pushing to https://github.com/$REPO"
 
-# Add all files
-git add -A
+cd /root/.openclaw/workspace/quantum-workspace
 
-# Commit
-git commit -m "Initial commit: AI Dev Suite - Enterprise SDLC Operating System"
+# Check if gh is authenticated
+if ! gh auth status &>/dev/null; then
+    echo "⚠️ GitHub CLI not authenticated"
+    echo "Please run: gh auth login"
+    echo ""
+    echo "Or use a personal access token:"
+    echo "  gh auth login --with-token <<< 'YOUR_TOKEN'"
+    exit 1
+fi
 
-# Create and push repo (run 'gh auth login' first if needed)
-gh repo create ai-dev-suite --public --source=. --push
+# Create repo if doesn't exist (will prompt)
+gh repo create $REPO --source=. --public --push 2>/dev/null || {
+    echo "Repo may exist, trying push..."
+    git push -u origin master
+}
+
+echo "✅ Done!"
+echo "🔗 https://github.com/$REPO"
