@@ -327,10 +327,10 @@ async function startNewProject() {
   if (!llmRouter) initialize();
 
   try {
-    const project = await orchestrator!.startProject(idea);
+    const project = await llmRouter!.startProject(idea);
     
     // Show viability report
-    const report = orchestrator!.getViabilityReport();
+    const report = llmRouter!.getViabilityReport();
     
     const doc = await vscode.window.showTextDocument(
       vscode.Uri.parse(`untitled:viability-${project.id}.md`),
@@ -349,11 +349,11 @@ async function startNewProject() {
     );
 
     if (approve === 'Approve & Continue') {
-      await orchestrator!.approveViability(true);
+      await llmRouter!.approveViability(true);
       vscode.window.showInformationMessage('📋 Generating project plan...');
       
-      await orchestrator!.generatePlan();
-      const plan = orchestrator!.getProjectPlan();
+      await llmRouter!.generatePlan();
+      const plan = llmRouter!.getProjectPlan();
       
       const planDoc = await vscode.window.showTextDocument(
         vscode.Uri.parse(`untitled:plan-${project.id}.md`),
@@ -379,8 +379,8 @@ async function analyzeIdea() {
   
   vscode.window.showInformationMessage('🔍 Running viability analysis...');
   
-  const project = await orchestrator!.startProject(idea);
-  const report = orchestrator!.getViabilityReport();
+  const project = await llmRouter!.startProject(idea);
+  const report = llmRouter!.getViabilityReport();
   
   // Create and show report
   const doc = await vscode.window.showTextDocument(
@@ -524,7 +524,7 @@ async function addTests() {
   const editor = vscode.window.activeTextEditor;
   if (!editor) return;
   
-  const code = editor.document.getText(editor.document.uri);
+  const code = editor.document.getText();
   
   vscode.window.showInformationMessage('🧪 Generating tests... (demo mode)');
   // Would call developer.generateTests in production

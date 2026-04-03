@@ -114,10 +114,10 @@ class AITerminal {
         }
         // Framework-specific suggestions
         if (framework === 'Next.js' || framework === 'React') {
-            suggestions.push({ command: 'npm run build', desc: 'Build for production', confidence: 0.8, icon: '📦' }, { command: 'npm run lint', desc: 'Lint code', confidence: 0.7, icon: '✨' });
+            suggestions.push({ command: 'npm run build', description: 'Build for production', confidence: 0.8, icon: '📦' }, { command: 'npm run lint', description: 'Lint code', confidence: 0.7, icon: '✨' });
         }
         if (framework === 'Vue') {
-            suggestions.push({ command: 'npm run build', desc: 'Build for production', confidence: 0.8, icon: '📦' }, { command: 'npm run dev', desc: 'Start dev server', confidence: 0.9, icon: '🚀' });
+            suggestions.push({ command: 'npm run build', description: 'Build for production', confidence: 0.8, icon: '📦' }, { command: 'npm run dev', description: 'Start dev server', confidence: 0.9, icon: '🚀' });
         }
         // AI suggestions based on natural language
         if (lowerInput.includes('run') || lowerInput.includes('start')) {
