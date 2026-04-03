@@ -44,7 +44,7 @@ export class SmartMemory {
           preferences: new Map(parsed.preferences || {})
         };
       } else {
-        this.initMemory(workspacePath);
+        this.initMemory(vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || '');
       }
     } catch (e) {
       this.initMemory(vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || '');

@@ -6,7 +6,7 @@
   "publisher": "quantumtechnologies",
   "license": "PROPRIETARY",
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.100.0"
   },
   "categories": [
     "Programming Languages",
@@ -111,29 +111,9 @@
         "description": "Open AI-powered terminal"
       },
       {
-        "command": "quantumWorkspace.terminalSuggest",
-        "title": "Quantum Workspace: Terminal Suggestions",
-        "description": "Get AI command suggestions"
-      },
-      {
         "command": "quantumWorkspace.deploy",
         "title": "Quantum Workspace: Deploy",
-        "description": "Deploy to cloud (Vercel/Cloudflare/Netlify)"
-      },
-      {
-        "command": "quantumWorkspace.deployVercel",
-        "title": "Quantum Workspace: Deploy to Vercel",
-        "description": "Deploy to Vercel"
-      },
-      {
-        "command": "quantumWorkspace.deployCloudflare",
-        "title": "Quantum Workspace: Deploy to Cloudflare",
-        "description": "Deploy to Cloudflare Pages"
-      },
-      {
-        "command": "quantumWorkspace.openDeployment",
-        "title": "Quantum Workspace: Open Deployment",
-        "description": "Open deployment URL"
+        "description": "Deploy to cloud"
       },
       {
         "command": "quantumWorkspace.templates",
@@ -141,69 +121,29 @@
         "description": "Browse project templates"
       },
       {
-        "command": "quantumWorkspace.createProject",
-        "title": "Quantum Workspace: Create Project",
-        "description": "Create project from template"
-      },
-      {
         "command": "quantumWorkspace.plugins",
         "title": "Quantum Workspace: Plugins",
         "description": "Manage plugins"
       },
       {
-        "command": "quantumWorkspace.createPlugin",
-        "title": "Quantum Workspace: Create Plugin",
-        "description": "Create a new plugin"
-      },
-      {
         "command": "aiDevSuite.start",
         "title": "AI Dev Suite: Start",
-        "description": "Launch the AI Dev Suite"
-      },
-      {
-        "command": "aiDevSuite.newProject",
-        "title": "AI Dev Suite: New Project",
-        "description": "Start a new project with viability analysis"
-      },
-      {
-        "command": "aiDevSuite.analyzeIdea",
-        "title": "AI Dev Suite: Analyze Idea",
-        "description": "Run business viability analysis on an idea"
+        "description": "Launch AI Dev Suite"
       },
       {
         "command": "aiDevSuite.chatArchitect",
         "title": "AI Dev Suite: Chat with Architect",
-        "description": "Chat with the Chief Architect agent"
+        "description": "Chat with the Chief Architect"
       },
       {
         "command": "aiDevSuite.chatDeveloper",
         "title": "AI Dev Suite: Chat with Developer",
-        "description": "Chat with the Lead Developer agent"
+        "description": "Chat with the Lead Developer"
       },
       {
         "command": "aiDevSuite.chatDesigner",
         "title": "AI Dev Suite: Chat with Designer",
-        "description": "Chat with the UI/UX Designer agent"
-      },
-      {
-        "command": "aiDevSuite.generateDoc",
-        "title": "AI Dev Suite: Generate Documentation",
-        "description": "Generate project documentation"
-      },
-      {
-        "command": "aiDevSuite.runTests",
-        "title": "AI Dev Suite: Run Tests",
-        "description": "Run tests with agent analysis"
-      },
-      {
-        "command": "aiDevSuite.deploy",
-        "title": "AI Dev Suite: Deploy",
-        "description": "Deploy the current project"
-      },
-      {
-        "command": "aiDevSuite.settings",
-        "title": "AI Dev Suite: Settings",
-        "description": "Open extension settings"
+        "description": "Chat with the UI/UX Designer"
       }
     ],
     "configuration": {
@@ -212,125 +152,29 @@
         "quantumWorkspace.theme": {
           "type": "string",
           "default": "quantum-dark",
-          "enum": ["quantum-dark", "quantum-light"],
-          "description": "Quantum Workspace theme"
+          "enum": [
+            "quantum-dark",
+            "quantum-light"
+          ],
+          "description": "Theme"
         },
+        "quantumWorkspace.providers.openrouter.apiKey": {
           "type": "string",
           "default": "",
           "description": "OpenRouter API Key"
         },
-        "aiDevSuite.providers.openrouter.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable OpenRouter provider"
-        },
-        "aiDevSuite.providers.openrouter.defaultModel": {
-          "type": "string",
-          "default": "anthropic/claude-3.5-sonnet",
-          "description": "Default model for OpenRouter"
-        },
-        "aiDevSuite.providers.ollama.endpoint": {
+        "quantumWorkspace.providers.ollama.endpoint": {
           "type": "string",
           "default": "http://localhost:11434",
-          "description": "Ollama API endpoint"
-        },
-        "aiDevSuite.providers.ollama.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable Ollama (local models)"
-        },
-        "aiDevSuite.providers.ollama.defaultModel": {
-          "type": "string",
-          "default": "llama3.3",
-          "description": "Default Ollama model"
-        },
-        "aiDevSuite.providers.agentRouter.enabled": {
-          "type": "boolean",
-          "default": false,
-          "description": "Enable Agent Router"
-        },
-        "aiDevSuite.providers.agentRouter.apiKey": {
-          "type": "string",
-          "default": "",
-          "description": "Agent Router API Key"
-        },
-        "aiDevSuite.routing.strategy": {
-          "type": "string",
-          "default": "auto",
-          "enum": ["auto", "cost-optimized", "performance", "custom"],
-          "description": "LLM routing strategy"
-        },
-        "aiDevSuite.routing.fallbackEnabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable automatic fallback on failure"
-        },
-        "aiDevSuite.agents.architect.model": {
-          "type": "string",
-          "default": "anthropic/claude-3.5-sonnet",
-          "description": "Model for Architect agent"
-        },
-        "aiDevSuite.agents.developer.model": {
-          "type": "string",
-          "default": "deepseek/deepseek-coder-v2",
-          "description": "Model for Developer agent"
-        },
-        "aiDevSuite.agents.designer.model": {
-          "type": "string",
-          "default": "google/gemini-pro-1.5-flash",
-          "description": "Model for Designer agent"
-        },
-        "aiDevSuite.ui.theme": {
-          "type": "string",
-          "default": "dark",
-          "enum": ["dark", "light", "system"],
-          "description": "UI theme"
-        },
-        "aiDevSuite.ui.panelPosition": {
-          "type": "string",
-          "default": "right",
-          "enum": ["right", "bottom"],
-          "description": "Chat panel position"
+          "description": "Ollama endpoint"
         }
       }
-    },
-    "viewsContainers": {
-      "activitybar": {
-        "ai-dev-suite": {
-          "id": "ai-dev-suite",
-          "title": "AI Dev Suite"
-        }
-      }
-    },
-    "views": {
-      "ai-dev-suite": [
-        {
-          "id": "ai-dev-suite-projects",
-          "name": "Projects"
-        },
-        {
-          "id": "ai-dev-suite-chat",
-          "name": "Chat"
-        },
-        {
-          "id": "ai-dev-suite-docs",
-          "name": "Docs"
-        }
-      ]
     },
     "menus": {
       "editor/context": [
         {
           "command": "aiDevSuite.explainCode",
           "when": "editorHasSelection"
-        },
-        {
-          "command": "aiDevSuite.refactorCode",
-          "when": "editorHasSelection"
-        },
-        {
-          "command": "aiDevSuite.addTests",
-          "when": "editorFocus"
         }
       ]
     }
@@ -339,22 +183,16 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./tsconfig.json",
     "watch": "tsc -watch -p ./tsconfig.json",
-    "lint": "eslint src --ext .ts",
-    "test": "node ./out/test/runTest.js",
     "package": "vsce package"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
-    "@types/vscode": "^1.85.0",
-    "@types/uuid": "^9.0.7",
+    "@types/vscode": "^1.100.0",
     "typescript": "^5.3.3",
-    "vsce": "^2.15.0",
-    "eslint": "^8.56.0",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0"
+    "vsce": "^2.15.0"
   },
   "dependencies": {
-    "uuid": "^9.0.1",
-    "vscode": "^1.85.0"
+    "axios": "^1.14.0",
+    "uuid": "^9.0.1"
   }
 }

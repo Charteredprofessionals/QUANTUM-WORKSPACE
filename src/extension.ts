@@ -5,7 +5,6 @@
 
 import * as vscode from 'vscode';
 import { createLLMRouter, LLMRouter } from './llm/router';
-import { WorkflowOrchestrator } from './workflows/orchestrator';
 import { SimpleModeHandler } from './simple-mode';
 import { QuantumBrain } from './quantum-brain';
 import { OneClickBuild } from './one-click-build';
@@ -21,7 +20,7 @@ import { DESIGNER_PROMPT, DESIGNER_CONFIG } from './agents/designer';
 
 // Global state
 let llmRouter: LLMRouter | null = null;
-let orchestrator: WorkflowOrchestrator | null = null;
+
 let simpleMode: SimpleModeHandler | null = null;
 let quantumBrain: QuantumBrain | null = null;
 let oneClickBuild: OneClickBuild | null = null;
@@ -59,7 +58,6 @@ function getConfig() {
 async function initialize() {
   const config = getConfig();
   llmRouter = createLLMRouter(config);
-  orchestrator = new WorkflowOrchestrator(llmRouter);
   simpleMode = new SimpleModeHandler(llmRouter);
   simpleMode.registerCommands();
   
@@ -326,7 +324,7 @@ async function startNewProject() {
 
   vscode.window.showInformationMessage('🔍 Analyzing viability...');
 
-  if (!orchestrator) initialize();
+  if (!llmRouter) initialize();
 
   try {
     const project = await orchestrator!.startProject(idea);
@@ -377,7 +375,7 @@ async function analyzeIdea() {
   
   if (!idea) return;
   
-  if (!orchestrator) initialize();
+  if (!llmRouter) initialize();
   
   vscode.window.showInformationMessage('🔍 Running viability analysis...');
   
@@ -395,7 +393,7 @@ async function analyzeIdea() {
 }
 
 async function openChat(agent: 'architect' | 'developer' | 'designer') {
-  if (!orchestrator) initialize();
+  if (!llmRouter) initialize();
   
   const agentInfo = {
     architect: { name: 'Chief Architect', emoji: '🏛️', prompt: ARCHITECT_PROMPT },
@@ -434,20 +432,20 @@ ${agentInfo.prompt.substring(0, 500)}...
 }
 
 async function generateDocumentation() {
-  if (!orchestrator) {
+  if (!llmRouter) {
     vscode.window.showWarningMessage('No active project. Start a new project first.');
     return;
   }
 
-  const project = orchestrator.getCurrentProject();
+  const project = llmRouter.getCurrentProject();
   if (!project) {
     vscode.window.showWarningMessage('No active project.');
     return;
   }
 
   // Generate all docs
-  await orchestrator.runDesign(project.description);
-  const docs = orchestrator.getDesignSpec();
+  await llmRouter.runDesign(project.description);
+  const docs = llmRouter.getDesignSpec();
 
   const doc = await vscode.window.showTextDocument(
     vscode.Uri.parse(`untitled:docs-${project.id}.md`),
@@ -459,27 +457,27 @@ async function generateDocumentation() {
 }
 
 async function runTests() {
-  if (!orchestrator) {
+  if (!llmRouter) {
     vscode.window.showWarningMessage('No active project.');
     return;
   }
 
   vscode.window.showInformationMessage('🧪 Running tests...');
   
-  await orchestrator.runTests();
+  await llmRouter.runTests();
   
   vscode.window.showInformationMessage('✅ Tests completed!');
 }
 
 async function deploy() {
-  if (!orchestrator) {
+  if (!llmRouter) {
     vscode.window.showWarningMessage('No active project.');
     return;
   }
 
   vscode.window.showInformationMessage('🚀 Deploying...');
   
-  await orchestrator.deploy();
+  await llmRouter.deploy();
   
   vscode.window.showInformationMessage('✅ Deployed successfully!');
 }
@@ -495,7 +493,7 @@ async function explainSelection() {
     return;
   }
 
-  if (!orchestrator) initialize();
+  if (!llmRouter) initialize();
 
   // Quick explanation via Developer agent
   const doc = await vscode.window.showTextDocument(
@@ -543,9 +541,9 @@ class ProjectsProvider implements vscode.TreeDataProvider<any> {
   }
 
   getChildren(element?: any): any[] {
-    if (!orchestrator) return [];
+    if (!llmRouter) return [];
     
-    const project = orchestrator.getCurrentProject();
+    const project = llmRouter.getCurrentProject();
     if (!project) return [{ label: 'No active project', iconPath: undefined }];
     
     return [
