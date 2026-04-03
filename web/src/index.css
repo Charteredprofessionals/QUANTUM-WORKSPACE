@@ -1,0 +1,227 @@
+/* Quantum Workspace Web - Global Styles */
+
+:root {
+  /* Quantum Brand Colors */
+  --quantum-bg-primary: #0d1117;
+  --quantum-bg-secondary: #161b22;
+  --quantum-bg-tertiary: #21262d;
+  --quantum-border: #30363d;
+  
+  --quantum-blue: #58a6ff;
+  --quantum-green: #238636;
+  --quantum-green-hover: #2ea043;
+  --quantum-purple: #a371f7;
+  --quantum-red: #f85149;
+  --quantum-orange: #d29922;
+  
+  --quantum-text-primary: #c9d1d9;
+  --quantum-text-secondary: #8b949e;
+  --quantum-text-muted: #6e7681;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--quantum-bg-primary);
+  color: var(--quantum-text-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--quantum-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--quantum-border);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--quantum-text-muted);
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--quantum-green);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--quantum-green-hover);
+}
+
+.btn-secondary {
+  background: var(--quantum-bg-tertiary);
+  color: var(--quantum-text-primary);
+  border: 1px solid var(--quantum-border);
+}
+
+.btn-secondary:hover {
+  background: var(--quantum-border);
+}
+
+/* Input */
+input, textarea {
+  background: var(--quantum-bg-primary);
+  border: 1px solid var(--quantum-border);
+  color: var(--quantum-text-primary);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--quantum-blue);
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.sidebar {
+  width: 50px;
+  background: var(--quantum-bg-secondary);
+  border-right: 1px solid var(--quantum-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  height: 40px;
+  background: var(--quantum-bg-secondary);
+  border-bottom: 1px solid var(--quantum-border);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.workspace {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.panel {
+  background: var(--quantum-bg-secondary);
+}
+
+.tabs {
+  display: flex;
+  background: var(--quantum-bg-secondary);
+  border-bottom: 1px solid var(--quantum-border);
+}
+
+.tab {
+  padding: 8px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  color: var(--quantum-text-secondary);
+  font-size: 13px;
+}
+
+.tab:hover {
+  color: var(--quantum-text-primary);
+}
+
+.tab.active {
+  color: var(--quantum-text-primary);
+  border-bottom-color: var(--quantum-blue);
+}
+
+/* Simple Mode */
+.simple-mode {
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.goal-card {
+  background: var(--quantum-bg-secondary);
+  border: 2px solid var(--quantum-border);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.goal-card:hover {
+  border-color: var(--quantum-blue);
+  transform: translateY(-2px);
+}
+
+/* Terminal */
+.terminal-container {
+  height: 100%;
+  padding: 8px;
+  background: #0d1117;
+}
+
+/* File Explorer */
+.file-tree {
+  padding: 8px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.file-item:hover {
+  background: var(--quantum-bg-tertiary);
+}
+
+.file-item.active {
+  background: var(--quantum-blue);
+  color: white;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--quantum-text-secondary);
+}
